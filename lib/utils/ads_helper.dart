@@ -58,7 +58,8 @@ class AdsHelper {
           onAdFailedToLoad: (error) {
             print("$error");
           },
-        ));
+        ),
+    );
   }
 
   void initNative() {}
