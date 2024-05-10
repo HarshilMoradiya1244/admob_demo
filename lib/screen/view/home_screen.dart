@@ -25,11 +25,6 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Scaffold(
       body: Column(
         children: [
-          AdsHelper.adsHelper.bannerAd == null
-              ? Container()
-              : SizedBox(
-                  height: 100,
-                  child: AdWidget(ad: AdsHelper.adsHelper.bannerAd!)),
           ElevatedButton(
               onPressed: () {
                 if (AdsHelper.adsHelper.rewardedAd != null) {
@@ -44,6 +39,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 }
               },
               child: const Text("Reward")),
+          AdsHelper.adsHelper.bannerAd == null
+              ? Container()
+              : SizedBox(
+                  height: 100,
+                  child: AdWidget(ad: AdsHelper.adsHelper.bannerAd!),
+                ),
           ElevatedButton(
               onPressed: () {
                 if (AdsHelper.adsHelper.interstitialAd != null) {
