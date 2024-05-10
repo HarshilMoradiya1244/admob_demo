@@ -21,17 +21,18 @@ class _HomeScreenState extends State<HomeScreen> {
     AdsHelper.adsHelper.initReward();
     AdsHelper.adsHelper.initOpenAds();
 
-    Timer(Duration(seconds: 3), () {
-      if (AdsHelper.adsHelper.appOpenAd != null) {
-        AdsHelper.adsHelper.appOpenAd!.show();
-        AdsHelper.adsHelper.appOpenAd!.fullScreenContentCallback =
-            FullScreenContentCallback(
-              onAdDismissedFullScreenContent: (ad) {
-
-              },
-            );
-      } else {}
-    });
+    Timer(
+      const Duration(seconds: 3),
+      () {
+        if (AdsHelper.adsHelper.appOpenAd != null) {
+          AdsHelper.adsHelper.appOpenAd!.show();
+          AdsHelper.adsHelper.appOpenAd!.fullScreenContentCallback =
+              FullScreenContentCallback(
+            onAdDismissedFullScreenContent: (ad) {},
+          );
+        } else {}
+      },
+    );
   }
 
   @override
@@ -69,11 +70,11 @@ class _HomeScreenState extends State<HomeScreen> {
               AdsHelper.adsHelper.bannerAd == null
                   ? Container()
                   : SizedBox(
-                height: 200,
-                child: AdWidget(
-                  ad: AdsHelper.adsHelper.bannerAd!,
-                ),
-              ),
+                      height: 200,
+                      child: AdWidget(
+                        ad: AdsHelper.adsHelper.bannerAd!,
+                      ),
+                    ),
               const SizedBox(
                 height: 10,
               ),
