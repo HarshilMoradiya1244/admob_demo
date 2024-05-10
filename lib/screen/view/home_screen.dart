@@ -82,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   if (AdsHelper.adsHelper.rewardedAd != null) {
                     AdsHelper.adsHelper.rewardedAd!.show(
                       onUserEarnedReward: (ad, reward) {
-                        Get.snackbar("Reward${reward.amount}", "message");
+                        Get.snackbar("Reward ${reward.amount}", "message");
                         AdsHelper.adsHelper.initReward();
                       },
                     );
